@@ -3,8 +3,6 @@ from utls import load_testdata
 from semantic_split import SentenceTransformersSimilarity, \
     SimilarSentenceSplitter, SpacySentenceSplitter
 
-import pytest
-
 
 splitter = None
 

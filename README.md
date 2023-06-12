@@ -25,6 +25,7 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
 
 ### Install
 
+`python -m spacy download en_core_web_sm`
 `pip install semantic-split`
 
 ### Development
