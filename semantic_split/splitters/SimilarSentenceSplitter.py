@@ -1,5 +1,6 @@
 
 
+from typing import List
 from .Splitter import Splitter
 
 
@@ -10,7 +11,7 @@ class SimilarSentenceSplitter(Splitter):
         self.model = similarity_model
         self.sentence_splitter = sentence_splitter
 
-    def split(self, text: str, group_max_sentences=5) -> list[str]:
+    def split(self, text: str, group_max_sentences=5) -> List[str]:
         '''
             group_max_sentences: The maximum number of sentences in a group.
         '''

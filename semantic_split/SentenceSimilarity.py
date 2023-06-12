@@ -1,3 +1,4 @@
+from typing import List
 from sentence_transformers import SentenceTransformer, util
 
 class SentenceTransformersSimilarity():
@@ -6,7 +7,7 @@ class SentenceTransformersSimilarity():
         self.similarity_threshold = similarity_threshold
 
 
-    def similarities(self, sentences: list[str]):
+    def similarities(self, sentences: List[str]):
         # Encode all sentences 
         embeddings = self.model.encode(sentences)
 

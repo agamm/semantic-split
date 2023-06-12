@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import List
 
 
 class Splitter(ABC):
@@ -7,5 +8,5 @@ class Splitter(ABC):
         pass
 
     @abstractmethod
-    def split(self, text: str) -> list[str]:
+    def split(self, text: str) -> List[str]:
         pass

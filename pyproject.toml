@@ -12,7 +12,7 @@ name = "semnatic-split"
 url = "https://github.com/agamm/semantic-split"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8, ^3.9, ^3.10"
 sentence-transformers = "^2.2.2"
 spacy = "^3.5.3"
 
