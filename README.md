@@ -39,18 +39,18 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
 #### Sentence Split by Semantic Similarity
 
 ```
-    from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
+from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
 
-    text = """
-      I dogs are amazing.
-      Cats must be the easiest pets around.
-      Robots are advanced now with AI.
-      Flying in space can only be done by Artificial intelligence."""
+text = """
+  I dogs are amazing.
+  Cats must be the easiest pets around.
+  Robots are advanced now with AI.
+  Flying in space can only be done by Artificial intelligence."""
 
-    model = SentenceTransformersSimilarity()
-    sentence_splitter = SpacySentenceSplitter()
-    splitter = SimilarSentenceSplitter(model, sentence_splitter)
-    res = splitter.split(text)
+model = SentenceTransformersSimilarity()
+sentence_splitter = SpacySentenceSplitter()
+splitter = SimilarSentenceSplitter(model, sentence_splitter)
+res = splitter.split(text)
 ```
 
 **Result**:
