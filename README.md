@@ -49,7 +49,10 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
     res = splitter.split(text)
 ```
 
-> **Result**: `[["I dogs are amazing.", "Cats must be the easiest pets around."], ["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."]]`
+**Result**:
+
+> `[["I dogs are amazing.", "Cats must be the easiest pets around."], `  
+> `["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."]]`
 
 ### Tests
 
