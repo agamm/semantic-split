@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       matrix:
         python-version: ["3.8"]
@@ -22,10 +25,14 @@ jobs:
           pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
           poetry install --with dev
           poetry run python -m spacy download en_core_web_sm
-          sudo find / -name 'libcudart.so'
-          sudo apt-get install libcudart10.1
-          cd /usr/local/cuda/lib64/
-          sudo ln -sf libcudart.so.10.2 libcudart.so.10.1
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: anaconda-client-env
+          environment-file: etc/example-environment.yml
+          auto-activate-base: false
+      - run: |
+          conda info
+          conda install cudatoolkit
       - name: Lint with ruff
         run: |
           # stop the build if there are Python syntax errors or undefined names
