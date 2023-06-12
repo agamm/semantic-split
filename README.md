@@ -25,6 +25,10 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
 
 ### Install
 
+`pip install semantic-split`
+
+### Development
+
 1. To use most of the functionality you will need to install some pre-requisists
 2. Spacy sm dataset: `python -m spacy download en_core_web_sm`
 3. `poetry install`

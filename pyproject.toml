@@ -7,6 +7,10 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "semantic_split"}]
 
+[[tool.poetry.source]]
+name = "semnatic-split"
+url = "https://github.com/agamm/semantic-split"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 sentence-transformers = "^2.2.2"
