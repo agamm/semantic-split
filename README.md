@@ -47,7 +47,7 @@ or `conda install cudatoolkit`
 
 #### Sentence Split by Semantic Similarity
 
-```
+```python
 from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
 
 text = """
