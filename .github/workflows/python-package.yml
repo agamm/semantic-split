@@ -23,7 +23,6 @@ jobs:
           activate-environment: anaconda-client-env
           auto-activate-base: false
       - run: |
-          conda info
           conda install cudatoolkit
       - name: Install dependencies
         run: |
@@ -41,5 +40,6 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with pytest
         run: |
-          pip3 install semantic-split -t /home/runner/work/semantic-split
+          poetry build
+          pip install dist/*.whl
           pytest
