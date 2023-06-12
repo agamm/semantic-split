@@ -32,7 +32,7 @@ You might need to have CUDA for the `SentenceSimilarity` an easy fix is to insta
 `pip install torch` if you have a GPU.
 or (this requires python 3.8 for some reason)
 `pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html` if you don't.
-or `python -m pip  install torch --extra-index-url https://download.pytorch.org/whl/cpu`
+or `conda install cudatoolkit`
 
 ### Development
 
