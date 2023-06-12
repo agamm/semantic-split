@@ -21,6 +21,8 @@ jobs:
           pip install ruff pytest poetry
           pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
           poetry install --with dev
+          echo 'asdasdasd'
+          ls -la /usr/local/cuda*
           poetry run python -m spacy download en_core_web_sm
       - name: Lint with ruff
         run: |
