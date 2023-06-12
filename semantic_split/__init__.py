@@ -7,4 +7,5 @@ from .splitters.Splitter import Splitter
 from .splitters.SpacySentenceSplitter import SpacySentenceSplitter
 from .splitters.SimilarSentenceSplitter import SimilarSentenceSplitter
 
-__all__ = ['SentenceTransformersSimilarity', 'Splitter', 'SpacySentenceSplitter', 'SimilarSentenceSplitter' ]
+__all__ = ['SentenceTransformersSimilarity', 'Splitter', 'SpacySentenceSplitter', 
+           'SimilarSentenceSplitter' ]
