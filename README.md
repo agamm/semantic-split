@@ -1,4 +1,4 @@
-# Semantic-Split
+# ✂️ Semantic-Split
 
 ![semantic-split-tests](https://github.com/agamm/semantic-split/actions/workflows/python-package.yml/badge.svg)
 
@@ -25,7 +25,7 @@ Imagine you're building an application where users ask questions about articles:
 
 As you can see, in part `1`, which involves semantic sentence splitting (grouping), is crucial. If we don't split or group the sentences semantically, we risk losing essential information. This can diminish the effectiveness of our Vector DB in identifying the most suitable chunks. Consequently, we may end up with poorer context for our prompts, negatively impacting the quality of our responses.
 
-### Install
+## Install
 
 `python -m spacy download en_core_web_sm`
 `pip install semantic-split`
@@ -36,17 +36,30 @@ or (this requires python 3.8 for some reason)
 `pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html` if you don't.
 or `conda install cudatoolkit`
 
-### Development
+## Development
 
 1. To use most of the functionality you will need to install some pre-requisists
 2. Spacy sm dataset: `python -m spacy download en_core_web_sm`
 3. `poetry install`
 4. See examples
 
-### Examples
+## ✂️ Splitters
 
-#### Sentence Split by Semantic Similarity
+### 1. Semantic Similarity
 
+### Input
+```
+  I dogs are amazing.
+  Cats must be the easiest pets around.
+  Robots are advanced now with AI.
+  Flying in space can only be done by Artificial intelligence.
+```
+
+### Output
+`[ ["I dogs are amazing.", "Cats must be the easiest pets around."], `  
+`["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."] ]`
+
+### Code
 ```python
 from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
 
@@ -62,11 +75,5 @@ splitter = SimilarSentenceSplitter(model, sentence_splitter)
 res = splitter.split(text)
 ```
 
-**Result**:
-
-> `[["I dogs are amazing.", "Cats must be the easiest pets around."], `  
-> `["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."]]`
-
-### Tests
-
+## Tests
 `poetry run pytest`
