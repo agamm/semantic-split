@@ -1837,5 +1837,5 @@ colorama = {version = ">=0.4.6", markers = "sys_platform == \"win32\" and python
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.10"
-content-hash = "bfa1a1214a63b7a5698f9bced875dbf5c66697a0e93b267957ecc424925928b4"
+python-versions = "^3.9"
+content-hash = "ed986321552d32651d8cb73546c3acb1790b3f9134d78433e8cc0f51e54b65f0"
