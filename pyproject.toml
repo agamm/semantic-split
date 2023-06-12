@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "semantic-split"
+version = "0.1.0"
+description = "A better way to split (chunk/group) your text before inserting them into an LLM/Vector DB."
+authors = ["Agam More <agam@agam.me>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "semantic_split"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sentence-transformers = "^2.2.2"
+spacy = "^3.5.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
