@@ -1,6 +1,5 @@
 
 
-from .SpacySentenceSplitter import SpacySentenceSplitter
 from .Splitter import Splitter
 
 
@@ -26,7 +25,8 @@ class SimilarSentenceSplitter(Splitter):
         # The first sentence is always in the first group.
         groups = [[sentences[0]]]
 
-        # Using the group min/max sentences contraints, group together the rest of the sentences.
+        # Using the group min/max sentences contraints, 
+        # group together the rest of the sentences.
         for i in range(1, len(sentences)):
             if len(groups[-1]) >= group_max_sentences:
                 groups.append([sentences[i]])
