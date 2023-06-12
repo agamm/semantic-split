@@ -41,5 +41,6 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with pytest
         run: |
+          sudo apt install python3-dev
           poetry install
           poetry run pytest
