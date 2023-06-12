@@ -41,6 +41,5 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with pytest
         run: |
-          sudo apt install python3-dev
-          poetry install
-          poetry run pytest
+          pip3 install semantic-split -t /home/runner/work/semantic-split
+          pytest
