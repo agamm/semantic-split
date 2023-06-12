@@ -1,8 +1,7 @@
 import pytest
 from utls import load_testdata
-from semantic_split import SentenceTransformersSimilarity, SimilarSentenceSplitter, SpacySentenceSplitter
-
-import pytest
+from semantic_split import SentenceTransformersSimilarity, \
+    SimilarSentenceSplitter, SpacySentenceSplitter
 
 
 splitter = None
@@ -13,7 +12,8 @@ def run_before_and_after_tests(tmpdir):
     global splitter
     model = SentenceTransformersSimilarity()
     sentence_splitter = SpacySentenceSplitter()
-    splitter = SimilarSentenceSplitter(similarity_model = model, sentence_splitter=sentence_splitter)
+    splitter = SimilarSentenceSplitter(similarity_model = model, 
+                                       sentence_splitter=sentence_splitter)
     yield  # this is where the testing happens
 
 
@@ -26,13 +26,18 @@ def test_two_similar_sentences():
 
 def test_similar_sentences():
 
-    text = """I dogs are amazing. Cats must be the easiest pets around. Robots are advanced now with AI. Flying in space can only be done by Artificial intelligence."""
+    text = """I dogs are amazing. 
+    Cats must be the easiest pets around. 
+    Robots are advanced now with AI. 
+    Flying in space can only be done by Artificial intelligence."""
 
     res = splitter.split(text)
 
     assert res == [
-        ["I dogs are amazing.", "Cats must be the easiest pets around."], 
-        ["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."]]
+        ["I dogs are amazing.", 
+         "Cats must be the easiest pets around."], 
+        ["Robots are advanced now with AI.", 
+         "Flying in space can only be done by Artificial intelligence."]]
 
 def test_different_sentences():
 

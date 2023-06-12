@@ -25,7 +25,14 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
 
 ### Install
 
+`python -m spacy download en_core_web_sm`
 `pip install semantic-split`
+
+You might need to have CUDA for the `SentenceSimilarity` an easy fix is to install it via pytorch:
+`pip install torch` if you have a GPU.
+or (this requires python 3.8 for some reason)
+`pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html` if you don't.
+or `conda install cudatoolkit`
 
 ### Development
 

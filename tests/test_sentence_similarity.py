@@ -1,9 +1,4 @@
-import pytest
-from utls import load_testdata
 from semantic_split import SentenceTransformersSimilarity
-
-
-import pytest
 
 
 def test_basic_usage():
