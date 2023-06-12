@@ -1,7 +1,6 @@
 import pytest
-from semantic_split.SentenceSimilarity import SentenceTransformersSimilarity
 from utls import load_testdata
-from semantic_split import SimilarSentenceSplitter
+from semantic_split import SentenceTransformersSimilarity
 
 
 import pytest

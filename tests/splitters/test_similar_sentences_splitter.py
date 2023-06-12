@@ -1,15 +1,13 @@
 import pytest
-from semantic_split.SentenceSimilarity import SentenceTransformersSimilarity
-from semantic_split.splitters.SpacySentenceSplitter import SpacySentenceSplitter
 from utls import load_testdata
-from semantic_split import SimilarSentenceSplitter
-#from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
+from semantic_split import SentenceTransformersSimilarity, SimilarSentenceSplitter, SpacySentenceSplitter
 
 import pytest
 
 
 splitter = None
 
+# Loading Spacy and The SentenceTransformer takes time, so we do it once for all tests.
 @pytest.fixture(autouse=True)
 def run_before_and_after_tests(tmpdir):
     global splitter
