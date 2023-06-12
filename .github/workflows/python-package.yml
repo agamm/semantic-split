@@ -21,9 +21,11 @@ jobs:
           pip install ruff pytest poetry
           pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
           poetry install --with dev
-          echo 'asdasdasd'
-          ls -la /usr/local/cuda*
           poetry run python -m spacy download en_core_web_sm
+          sudo find / -name 'libcudart.so'
+          sudo apt-get install libcudart10.1
+          cd /usr/local/cuda/lib64/
+          sudo ln -sf libcudart.so.10.2 libcudart.so.10.1
       - name: Lint with ruff
         run: |
           # stop the build if there are Python syntax errors or undefined names
