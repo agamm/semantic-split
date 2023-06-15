@@ -1,4 +1,4 @@
-# ✂️ Semantic-Split
+# Semantic-Split
 
 ![semantic-split-tests](https://github.com/agamm/semantic-split/actions/workflows/python-package.yml/badge.svg)
 
@@ -48,6 +48,7 @@ or `conda install cudatoolkit`
 ### 1. Semantic Similarity
 
 ### Input
+
 ```
   I dogs are amazing.
   Cats must be the easiest pets around.
@@ -56,10 +57,12 @@ or `conda install cudatoolkit`
 ```
 
 ### Output
+
 `[ ["I dogs are amazing.", "Cats must be the easiest pets around."], `  
 `["Robots are advanced now with AI.", "Flying in space can only be done by Artificial intelligence."] ]`
 
 ### Code
+
 ```python
 from semantic_split import SimilarSentenceSplitter, SentenceTransformersSimilarity, SpacySentenceSplitter
 
@@ -76,4 +79,5 @@ res = splitter.split(text)
 ```
 
 ## Tests
+
 `poetry run pytest`
