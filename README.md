@@ -27,7 +27,7 @@ As you can see, in part `1`, which involves semantic sentence splitting (groupin
 
 ## Install
 
-`python -m spacy download en_core_web_sm`
+`python -m spacy download en_core_web_sm`  
 `pip install semantic-split`
 
 You might need to have CUDA for the `SentenceSimilarity` an easy fix is to install it via pytorch:
