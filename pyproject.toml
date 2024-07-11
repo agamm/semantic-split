@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [{include = "semantic_split"}]
 
 [[tool.poetry.source]]
-name = "semnatic-split"
+name = "semantic-split"
 url = "https://github.com/agamm/semantic-split"
 
 [tool.poetry.dependencies]
