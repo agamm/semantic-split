@@ -1,7 +1,6 @@
 # Semantic-Split
 
 ![semantic-split-tests](https://github.com/agamm/semantic-split/actions/workflows/python-package.yml/badge.svg)
-[![Sponsor](https://readme-cash--readme-cash.us-central1.hosted.app/i/irel50g7zx.svg)](https://readme-cash--readme-cash.us-central1.hosted.app/c/irel50g7zx)
 
 A Python library to chunk/group your text based on semantic similarity - ideal for pre-processing data for Language Models or Vector Databases. Leverages [SentenceTransformers](https://github.com/UKPLab/sentence-transformers) and [spaCy](https://github.com/explosion/spaCy).
 
