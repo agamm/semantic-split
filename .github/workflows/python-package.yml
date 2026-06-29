@@ -5,32 +5,27 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.8", "3.10"]
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: conda-incubator/setup-miniconda@v2
-        with:
-          activate-environment: anaconda-client-env
-          auto-activate-base: false
-      - run: |
-          conda install cudatoolkit
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ruff pytest poetry
+          # click is imported by spacy's CLI but is no longer a hard dependency
+          # of recent typer releases, so install it explicitly.
+          pip install ruff pytest poetry click
           pip install -U spacy
           python -m spacy download en_core_web_sm
-      - uses: chartboost/ruff-action@v1
+      - name: Lint with ruff
+        run: ruff check .
       - name: Test with pytest
         run: |
           poetry build

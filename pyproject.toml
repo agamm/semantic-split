@@ -20,6 +20,10 @@ spacy = "^3.5.3"
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
 
+[tool.pytest.ini_options]
+# tests/utls.py is imported as `from utls import ...` by tests in subdirs.
+pythonpath = ["tests"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
